@@ -28,10 +28,14 @@ function writeToFile() {
         message: "How can the app be used?",
       },
       {
-        type: "list",
-        name: "license",
-        message: "Which license does your project use?",
-        choices: ["A", "B", "C"],
+        type: "input",
+        name: "currentuser",
+        message: "What is the Github username for the user who owns this repo?",
+      },
+      {
+        type: "input",
+        name: "currentrepo",
+        message: "What is the name of this repo?",
       },
       {
         type: "input",
@@ -59,10 +63,13 @@ function writeToFile() {
     // wait for responses
     .then((response) => {
       // template for README contents
+      // License badge can be autodetected using https://img.shields.io/github/license/<Github-Username>/<Repository>
       readmeContent = `
-      # ${response.title}
+# ${response.title}
 
 ## Description
+
+![license](https://img.shields.io/github/license/${response.currentuser}/${response.currentrepo})
 
 ${response.desc}
 
@@ -92,10 +99,7 @@ ${response.license}
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
+![license](https://img.shields.io/github/license/${response.currentuser}/${response.currentrepo})
 
 ## How to Contribute
 

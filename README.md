@@ -1,8 +1,10 @@
-# projecto
+
+      # projected man
 
 ## Description
 
-it projects
+![license](https://img.shields.io/github/license/exzilium/readme-generator)
+transport a rat across the room
 
 ## Table of Contents
 
@@ -13,11 +15,11 @@ it projects
 
 ## Installation
 
-install the project
+do the science stuff
 
 ## Usage
 
-step 1. do it
+1. Do it
 
 ## Credits
 
@@ -26,18 +28,15 @@ caseyjdwyer@gmail.com
 
 ## License
 
-B
+undefined
 
 ## Badges
 
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-
-Badges aren't necessary, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
+![license](https://img.shields.io/github/license/exzilium/readme-generator)
 
 ## How to Contribute
 
-casey
+casey d
 
 ## Tests
 
