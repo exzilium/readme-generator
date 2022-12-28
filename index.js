@@ -38,6 +38,22 @@ function writeToFile() {
         message: "What is the name of this repo?",
       },
       {
+        type: "list",
+        name: "license",
+        message: "What is the license used for this repo?",
+        choices: [
+          "N/A",
+          "Apache License 2.0",
+          "Boost Software License 1.0",
+          "GNU AGPLv3",
+          "GNU GPLv3",
+          "GNU LGPLv3",
+          "MIT License",
+          "Mozilla Public License 2.0",
+          "The Unlicense",
+        ],
+      },
+      {
         type: "input",
         name: "contribute",
         message: "Would you like to list any contributors?",
@@ -64,13 +80,12 @@ function writeToFile() {
     .then((response) => {
       // template for README contents
       // License badge can be autodetected using https://img.shields.io/github/license/<Github-Username>/<Repository>
-      readmeContent = `
-# ${response.title}
+      readmeContent = `# ${response.title}
 
 ## Description
 
 ![license](https://img.shields.io/github/license/${response.currentuser}/${response.currentrepo})
-
+<br>
 ${response.desc}
 
 ## Table of Contents
@@ -90,8 +105,11 @@ ${response.usage}
 
 ## Credits
 
-${response.github}
-${response.email}
+Send any questions to this contact:
+<br>
+[Github: ${response.github}](https://github.com/${response.github})
+<br>
+[Email: ${response.email}](mailto:${response.email})
 
 ## License
 
@@ -107,10 +125,9 @@ ${response.contribute}
 
 ## Tests
 
-${response.test}
-`;
+${response.test}`;
       // write file using template
-      fs.writeFile("README.md", readmeContent, (err) =>
+      fs.writeFile("new_README.md", readmeContent, (err) =>
         err ? console.log(err) : console.log("Success")
       );
     });
