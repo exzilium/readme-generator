@@ -125,9 +125,10 @@ ${response.contribute}
 
 ## Tests
 
-${response.test}`;
+${response.tests}`;
+
       // write file using template
-      fs.writeFile("new_README.md", readmeContent, (err) =>
+      fs.writeFile("your_README.md", readmeContent, (err) =>
         err ? console.log(err) : console.log("Success")
       );
     });
